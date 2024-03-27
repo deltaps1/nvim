@@ -5,6 +5,7 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
+  use 'feline-nvim/feline.nvim'
   use 'wbthomason/packer.nvim'
   use {
 	  'nvim-telescope/telescope.nvim', tag = '0.1.6',
@@ -23,14 +24,14 @@ return require('packer').startup(function(use)
   use("mbbill/undotree")
   use("tpope/vim-fugitive")
   use {"VonHeikemen/lsp-zero.nvim",
-  requires = {
-	  {"neovim/nvim-lspconfig"},
-	  {"williamboman/mason.nvim"},
-	  {"williamboman/mason-lspconfig.nvim"},
-	  {"hrsh7th/nvim-cmp"},
-	  {"hrsh7th/cmp-nvim-lsp"},
-	  {"L3MON4D3/LuaSnip"}
+      requires = {
+          {"neovim/nvim-lspconfig"},
+          {"williamboman/mason.nvim"},
+          {"williamboman/mason-lspconfig.nvim"},
+          {"hrsh7th/nvim-cmp"},
+          {"hrsh7th/cmp-nvim-lsp"},
+          {"L3MON4D3/LuaSnip"}
+      }
   }
-}
 end)
 
