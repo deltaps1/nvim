@@ -3,7 +3,9 @@ require('telescope').setup{
 	defaults = { file_ignore_patterns = {
 		"env/",
 		"venv/",
-		".git/"
+		".git/",
+        "node_modules/",
+        "__pycache__"
 	}}
 }
 
