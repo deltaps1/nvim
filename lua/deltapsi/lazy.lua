@@ -23,9 +23,7 @@ return require('lazy').setup(
             'nvim-telescope/telescope.nvim', tag = '0.1.6',
             dependencies = { {'nvim-lua/plenary.nvim'} }
         },
-        { 
-            'rose-pine/neovim', name = 'rose-pine'
-        },
+        { 'rose-pine/neovim', name = 'rose-pine' },
         {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
         'theprimeagen/harpoon',
         'mbbill/undotree',
