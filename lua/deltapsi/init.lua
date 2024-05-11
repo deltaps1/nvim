@@ -1,2 +1,2 @@
 require("deltapsi.remap")
-require("deltapsi.packer")
+require("deltapsi.lazy")
