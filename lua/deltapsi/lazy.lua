@@ -30,6 +30,18 @@ return require('lazy').setup(
         'tpope/vim-fugitive',
         'lewis6991/gitsigns.nvim',
         {
+            "vhyrro/luarocks.nvim",
+            priority = 1000,
+            config = true,
+        },
+        {
+            "nvim-neorg/neorg",
+            dependencies = { "luarocks.nvim" },
+            lazy = false, -- Disable lazy loading as some `lazy.nvim`
+            version = "*", -- Pin Neorg to the latest stable release
+            config = true,
+        },
+        {
             'VonHeikemen/lsp-zero.nvim',
             dependencies = {
                 {'neovim/nvim-lspconfig'},
