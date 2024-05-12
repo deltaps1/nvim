@@ -1,7 +1,8 @@
 require("deltapsi.remap")
 require("deltapsi.lazy")
 
-vim.wo.relativenumber = true
+vim.opt.nu = true
+vim.opt.relativenumber = true
 
 -- Sæt standard indrykning til 4 mellemrum
 vim.o.shiftwidth = 4
@@ -24,4 +25,5 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- NetRw hack fundet på Reddit
 -- (https://www.reddit.com/r/neovim/comments/16r1rno/how_can_i_show_line_number_and_relative_line/) 
-vim.g.netrw_bufsettings = 'rnu'
+vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
+
