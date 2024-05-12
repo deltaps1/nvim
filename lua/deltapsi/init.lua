@@ -27,3 +27,11 @@ vim.api.nvim_create_autocmd("FileType", {
 -- (https://www.reddit.com/r/neovim/comments/16r1rno/how_can_i_show_line_number_and_relative_line/) 
 vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
 
+-- Primeagen inspirerede editor setting
+-- vim.opt.guicursor = "" -- fat insert cursor (kan være svær at at bruge)
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.termguicolors = true
+
+vim.opt.scrolloff = 8 -- Der er altid 8 linjer under cursoren (pånær i slutningen)
+
