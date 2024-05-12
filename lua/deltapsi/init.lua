@@ -21,3 +21,7 @@ vim.api.nvim_create_autocmd("FileType", {
         set_indent(2)
     end,
 })
+
+-- NetRw hack fundet på Reddit
+-- (https://www.reddit.com/r/neovim/comments/16r1rno/how_can_i_show_line_number_and_relative_line/) 
+vim.g.netrw_bufsettings = 'rnu'
