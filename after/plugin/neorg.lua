@@ -3,7 +3,8 @@ require("neorg").setup({
         ["core.defaults"] = {},
         ["core.concealer"] = {
             config = { -- We added a `config` table!
-                icon_preset = "varied", -- And we set our option here.
+                icon_preset = "diamond", -- And we set our option here.
+                folds = true,
             },
         },
     }
