@@ -35,3 +35,7 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8 -- Der er altid 8 linjer under cursoren (pånær i slutningen)
 
+-- Neorg
+vim.wo.foldlevel = 99
+vim.wo.conceallevel = 3
+
