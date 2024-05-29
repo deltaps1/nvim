@@ -38,3 +38,8 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 -- Go back to previous file
 vim.keymap.set("n", "gb", "<cmd>e#<CR>")
+
+-- Nice resizes?
+vim.keymap.set('n', '<C-h>', ':vertical resize -2<CR>')
+vim.keymap.set('n', '<C-l>', ':vertical resize +2<CR>')
+
