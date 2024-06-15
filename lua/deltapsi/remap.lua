@@ -48,4 +48,23 @@ vim.keymap.set('n', '<C-l>', ':vertical resize +2<CR>')
 vim.keymap.set('n', '<C-j>', ':horizontal resize -2<CR>')
 vim.keymap.set('n', '<C-k>', ':horizontal resize +2<CR>')
 
+-- Create a terminal
+vim.keymap.set('n', '<C-n>', function()
+  vim.cmd('split')
+  vim.cmd('wincmd j')
+  vim.cmd('term')
+  vim.cmd('setlocal nonumber norelativenumber')
+  vim.cmd('startinsert')
+end, { noremap = true, silent = true })
+
+vim.keymap.set('n', '<C-m>', function()
+  vim.cmd('vsplit')
+  vim.cmd('wincmd l')
+  vim.cmd('term')
+  vim.cmd('setlocal nonumber norelativenumber')
+  vim.cmd('startinsert')
+end, { noremap = true, silent = true })
+
+-- Map Ctrl-W t to switch from terminal to other windows easily
+vim.keymap.set('t', '<C-w>', [[<C-\><C-N><C-w>]], { noremap = true, silent = true })
 
