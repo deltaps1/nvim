@@ -45,4 +45,7 @@ vim.keymap.set("n", "<Enter>", "o<Esc>")
 -- Nice resizes?
 vim.keymap.set('n', '<C-h>', ':vertical resize -2<CR>')
 vim.keymap.set('n', '<C-l>', ':vertical resize +2<CR>')
+vim.keymap.set('n', '<C-j>', ':horizontal resize -2<CR>')
+vim.keymap.set('n', '<C-k>', ':horizontal resize +2<CR>')
+
 
