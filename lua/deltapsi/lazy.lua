@@ -30,6 +30,10 @@ return require('lazy').setup(
         'tpope/vim-fugitive',
         'lewis6991/gitsigns.nvim',
         {
+            'VonHeikemen/fine-cmdline.nvim',
+            dependencies = { {'MunifTanjim/nui.nvim'} }
+        },
+        {
             'VonHeikemen/lsp-zero.nvim',
             dependencies = {
                 {'neovim/nvim-lspconfig'},
