@@ -46,8 +46,7 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>gn", "<cmd>e#<CR>")
 
 -- Make enter do usefull stuff
-vim.keymap.set("n", "<Enter>", "o<Esc>")
-
+vim.keymap.set("n", "<Enter>", "<cmd>FineCmdline<CR>")
 
 -- Create a terminal
 vim.keymap.set('n', '<C-n>', function()
