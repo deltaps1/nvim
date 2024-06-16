@@ -30,6 +30,12 @@ vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 
+-- Nice resizes?
+vim.keymap.set('n', '<C-Left>', '<cmd>vertical resize -2<CR>')
+vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize +2<CR>')
+vim.keymap.set('n', '<C-Down>', '<cmd>resize -2<CR>')
+vim.keymap.set('n', '<C-Up>', '<cmd>resize +2<CR>')
+
 -- Big bang replace!
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
@@ -42,11 +48,6 @@ vim.keymap.set("n", "<leader>gn", "<cmd>e#<CR>")
 -- Make enter do usefull stuff
 vim.keymap.set("n", "<Enter>", "o<Esc>")
 
--- Nice resizes?
-vim.keymap.set('n', '<C-h>', ':vertical resize -2<CR>')
-vim.keymap.set('n', '<C-l>', ':vertical resize +2<CR>')
-vim.keymap.set('n', '<C-j>', ':horizontal resize -2<CR>')
-vim.keymap.set('n', '<C-k>', ':horizontal resize +2<CR>')
 
 -- Create a terminal
 vim.keymap.set('n', '<C-n>', function()
