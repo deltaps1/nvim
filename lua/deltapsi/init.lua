@@ -8,6 +8,9 @@ vim.opt.relativenumber = true
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
 vim.o.expandtab = true
+vim.o.softtabstop = 4
+vim.o.autoindent = true
+vim.o.smartindent = true
 
 -- Funktion til at sætte indrykning for specifikke filtyper
 local function set_indent(width)
