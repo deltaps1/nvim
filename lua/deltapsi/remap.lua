@@ -36,6 +36,12 @@ vim.keymap.set('n', '<C-Right>', '<cmd>vertical resize 2<CR>')
 vim.keymap.set('n', '<C-Down>', '<cmd>resize +2<CR>')
 vim.keymap.set('n', '<C-Up>', '<cmd>resize -2<CR>')
 
+-- Easy navigations between splits
+vim.keymap.set('n', '<leader>l', '<C-w>l')
+vim.keymap.set('n', '<leader>k', '<C-w>k')
+vim.keymap.set('n', '<leader>j', '<C-w>j')
+vim.keymap.set('n', '<leader>h', '<C-w>h')
+
 -- Big bang replace!
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
