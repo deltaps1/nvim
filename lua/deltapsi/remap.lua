@@ -72,5 +72,5 @@ vim.keymap.set('n', '<C-m>', function()
 end, { noremap = true, silent = true })
 
 -- Map Ctrl-W t to switch from terminal to other windows easily
-vim.keymap.set('t', '<C-w>', [[<C-\><C-N><C-w>]], { noremap = true, silent = true })
-
+vim.keymap.set('t', '<C-w>', [[<c-\><c-n><C-w>]], { noremap = true, silent = true })
+vim.keymap.set('t', '<Esc>', [[<c-\><c-n>]], { noremap = true, silent = true })
