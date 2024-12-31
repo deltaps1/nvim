@@ -17,6 +17,7 @@ vim.g.maplocalleader = ' '
 return require('lazy').setup(
     {
         -- 'wbthomason/packer.nvim',
+        'virchau13/tree-sitter-astro',
         'feline-nvim/feline.nvim',
         {
             'nvim-telescope/telescope.nvim', tag = '0.1.6',
