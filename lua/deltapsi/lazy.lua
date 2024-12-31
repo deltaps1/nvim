@@ -28,6 +28,7 @@ return require('lazy').setup(
         'theprimeagen/harpoon',
         'mbbill/undotree',
         'tpope/vim-fugitive',
+        'nvim-tree/nvim-tree.lua',
         'lewis6991/gitsigns.nvim',
         {
             'VonHeikemen/fine-cmdline.nvim',
