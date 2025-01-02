@@ -44,7 +44,13 @@ return require('lazy').setup(
                 {'hrsh7th/cmp-nvim-lsp'},
                 {'L3MON4D3/LuaSnip'}
             }
-        }
+        },
+        { -- Det her plugin skaber en helt masse problemer, som umiddelbart ikke lige kan løses.
+          -- Det er  kun interessant pga. markdown, og mit `notes`-modul, som i øvrigt ikke er færdigudviklet. 
+            "lukas-reineke/headlines.nvim",
+            dependencies = "nvim-treesitter/nvim-treesitter",
+            config = true, -- or `opts = {}`
+        },
     }
 )
 
