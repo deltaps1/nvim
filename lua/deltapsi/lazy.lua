@@ -28,12 +28,14 @@ return require('lazy').setup(
         'theprimeagen/harpoon',
         'mbbill/undotree',
         'tpope/vim-fugitive',
-        'nvim-tree/nvim-tree.lua',
         'lewis6991/gitsigns.nvim',
         {
             'VonHeikemen/fine-cmdline.nvim',
             dependencies = { {'MunifTanjim/nui.nvim'} }
         },
+        {'neovim/nvim-lspconfig'},
+        {'hrsh7th/cmp-nvim-lsp'},
+        {'hrsh7th/nvim-cmp'},
         {
             'VonHeikemen/lsp-zero.nvim',
             dependencies = {
