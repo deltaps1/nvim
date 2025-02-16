@@ -1,4 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -9,6 +10,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = ' '
@@ -17,7 +19,6 @@ vim.g.maplocalleader = ' '
 return require('lazy').setup(
     {
         -- 'wbthomason/packer.nvim',
-        'virchau13/tree-sitter-astro',
         'feline-nvim/feline.nvim',
         {
             'nvim-telescope/telescope.nvim', tag = '0.1.6',
@@ -46,12 +47,6 @@ return require('lazy').setup(
                 {'hrsh7th/cmp-nvim-lsp'},
                 {'L3MON4D3/LuaSnip'}
             }
-        },
-        { -- Det her plugin skaber en helt masse problemer, som umiddelbart ikke lige kan løses.
-          -- Det er  kun interessant pga. markdown, og mit `notes`-modul, som i øvrigt ikke er færdigudviklet. 
-            "lukas-reineke/headlines.nvim",
-            dependencies = "nvim-treesitter/nvim-treesitter",
-            config = true, -- or `opts = {}`
         },
     }
 )
