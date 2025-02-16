@@ -1,21 +1,25 @@
+vim.g.lsp_zero_extend_lspconfig = 0
+
 local lsp_zero = require('lsp-zero')
 lsp_zero.extend_lspconfig()
 
+-- lsp_zero.preset('manual')
 lsp_zero.on_attach(function(client, bufnr)
-  -- see :help lsp-zero-keybindings
-  -- to learn the available actions
-  lsp_zero.default_keymaps({buffer = bufnr})
+    lsp_zero.default_keymaps({buffer = bufnr})
 end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-  handlers = {
-    lsp_zero.default_setup,
+    ensure_installed = { "lua_ls", "pyright" }, -- Tilføj de LSP-servere du vil bruge
+    handlers = {
+        function(server_name)
+            require('lspconfig')[server_name].setup({})
+        end,
   },
 })
 
 local cmp = require('cmp')
-local cmp_action = require('lsp-zero').cmp_action()
+local cmp_action = lsp_zero.cmp_action()
 
 cmp.setup({
   sources = {
@@ -23,21 +27,20 @@ cmp.setup({
   },
   snippet = {
     expand = function(args)
-      -- You need Neovim v0.10 to use vim.snippet
-      vim.snippet.expand(args.body)
+        require('luasnip').lsp_expand(args.body)
     end,
-  },
-  preselect = 'item',
-  completion = {
+    },
+    preselect = cmp.PreselectMode.Item,
+    completion = {
     completeopt = 'menu,menuone,noinsert'
   },
   mapping = cmp.mapping.preset.insert({
     -- `Enter` key to confirm completion
     ['<CR>'] = cmp.mapping.confirm({select = true}),
-    
+
     -- `Tab` completes
     ['<Tab>'] = cmp_action.tab_complete(),
-    
+
     -- Ctrl+Space to trigger completion menu
     ['<C-Space>'] = cmp.mapping.complete(),
 
