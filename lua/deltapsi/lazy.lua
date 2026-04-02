@@ -13,41 +13,56 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
-return require('lazy').setup(
+return require('lazy').setup({
+    -- Statusline
     {
-        -- 'wbthomason/packer.nvim',
-        'feline-nvim/feline.nvim',
-        {
-            'nvim-telescope/telescope.nvim', tag = '0.1.6',
-            dependencies = { {'nvim-lua/plenary.nvim'} }
-        },
-        { 'rose-pine/neovim', name = 'rose-pine' },
-        {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
-        'theprimeagen/harpoon',
-        'mbbill/undotree',
-        'tpope/vim-fugitive',
-        'lewis6991/gitsigns.nvim',
-        {
-            'VonHeikemen/fine-cmdline.nvim',
-            dependencies = { {'MunifTanjim/nui.nvim'} }
-        },
-        {'neovim/nvim-lspconfig'},
-        {'hrsh7th/cmp-nvim-lsp'},
-        {'hrsh7th/nvim-cmp'},
-        {
-            'VonHeikemen/lsp-zero.nvim',
-            dependencies = {
-                {'neovim/nvim-lspconfig'},
-                {'williamboman/mason.nvim'},
-                {'williamboman/mason-lspconfig.nvim'},
-                {'hrsh7th/nvim-cmp'},
-                {'hrsh7th/cmp-nvim-lsp'},
-                {'L3MON4D3/LuaSnip'}
-            }
-        },
-    }
-)
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+    },
 
+    -- Fuzzy finder
+    {
+        'nvim-telescope/telescope.nvim', tag = '0.1.6',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+    },
+
+    -- Colorscheme
+    { 'rose-pine/neovim', name = 'rose-pine' },
+
+    -- Syntax highlighting
+    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+
+    -- File navigation
+    'theprimeagen/harpoon',
+
+    -- Undo history
+    'mbbill/undotree',
+
+    -- Git
+    'tpope/vim-fugitive',
+    'lewis6991/gitsigns.nvim',
+
+    -- LSP
+    'neovim/nvim-lspconfig',
+    'williamboman/mason.nvim',
+    'williamboman/mason-lspconfig.nvim',
+
+    -- Completion
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+    { 'L3MON4D3/LuaSnip', build = 'make install_jsregexp' },
+    'saadparwaiz1/cmp_luasnip',
+    'rafamadriz/friendly-snippets',
+
+    -- Formatting
+    'stevearc/conform.nvim',
+
+    -- QoL
+    { 'windwp/nvim-autopairs', event = 'InsertEnter', config = true },
+    { 'kylechui/nvim-surround', event = 'VeryLazy', config = true },
+    { 'numToStr/Comment.nvim', config = true },
+    { 'folke/which-key.nvim', event = 'VeryLazy', config = true },
+    { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', config = true },
+})
