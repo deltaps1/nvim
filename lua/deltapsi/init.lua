@@ -1,3 +1,8 @@
+vim.opt.rtp:append(vim.fn.stdpath("data") .. "/site")
+
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 require("deltapsi.remap")
 require("deltapsi.lazy")
 
@@ -12,22 +17,18 @@ vim.o.softtabstop = 4
 vim.o.autoindent = true
 vim.o.smartindent = true
 
--- Funktion til at sætte indrykning for specifikke filtyper
-local function set_indent(width)
-    vim.o.shiftwidth = width
-    vim.o.tabstop = width
-end
-
--- Brug autocmd til at sætte indrykning til 2 mellemrum for JSX-filer
+-- Brug 2 mellemrum for web-filtyper (buffer-lokalt så det ikke påvirker andre buffere)
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"javascriptreact", "typescriptreact"},
+    pattern = { "javascript", "typescript", "javascriptreact", "typescriptreact", "html", "css", "json", "yaml" },
     callback = function()
-        set_indent(2)
+        vim.bo.shiftwidth = 2
+        vim.bo.tabstop = 2
+        vim.bo.softtabstop = 2
     end,
 })
 
 -- NetRw hack fundet på Reddit
--- (https://www.reddit.com/r/neovim/comments/16r1rno/how_can_i_show_line_number_and_relative_line/) 
+-- (https://www.reddit.com/r/neovim/comments/16r1rno/how_can_i_show_line_number_and_relative_line/)
 vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
 
 -- Primeagen inspirerede editor setting
@@ -40,4 +41,3 @@ vim.opt.scrolloff = 8 -- Der er altid 8 linjer under cursoren (pånær i slutnin
 
 vim.wo.foldlevel = 99
 vim.wo.conceallevel = 2
-
