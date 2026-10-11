@@ -30,7 +30,7 @@ return require('lazy').setup({
     { 'rose-pine/neovim', name = 'rose-pine' },
 
     -- Syntax highlighting
-    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+    { 'nvim-treesitter/nvim-treesitter', lazy = false, build = ':TSUpdate' },
 
     -- File navigation
     'theprimeagen/harpoon',
@@ -65,4 +65,12 @@ return require('lazy').setup({
     { 'numToStr/Comment.nvim', config = true },
     { 'folke/which-key.nvim', event = 'VeryLazy', config = true },
     { 'lukas-reineke/indent-blankline.nvim', main = 'ibl', config = true },
+}, {
+    performance = {
+        rtp = {
+            -- Ubuntu-pakken lægger de indbyggede treesitter-parsere (markdown, lua, vim ...)
+            -- her, men lazy's rtp-reset fjerner stien
+            paths = { '/usr/lib/x86_64-linux-gnu/nvim' },
+        },
+    },
 })
